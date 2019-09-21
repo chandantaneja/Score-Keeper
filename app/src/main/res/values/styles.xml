@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+   <!-- Style for TextView for setting Team Name -->
+    <style name="txt_teamNames" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <!-- Style for EditText for setting Team Name -->
+    <style name="ed_teamName">
+        <item name = "android:layout_width">200dp</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name="android:hint">Team xyz</item>
+        <item name="android:inputType">text</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
 </resources>

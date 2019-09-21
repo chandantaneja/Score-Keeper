@@ -3,4 +3,12 @@
     <string name="str_welcome">Hola! \n Welcome to the Score Keeper</string>
     <string name="btn_2Player">2 Player</string>
     <string name="btn_4Player">4 Player</string>
+
+    <!-- String Array For Spinner -->
+    <string-array name="target">
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
 </resources>
