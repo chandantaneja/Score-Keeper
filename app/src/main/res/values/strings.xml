@@ -6,6 +6,7 @@
 
     <!-- String Array For Spinner -->
     <string-array name="target">
+        <item>Target</item>
         <item>10</item>
         <item>20</item>
         <item>50</item>
