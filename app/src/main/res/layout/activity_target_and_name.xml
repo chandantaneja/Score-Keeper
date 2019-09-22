@@ -33,56 +33,56 @@
         android:layout_marginStart="100dp"
         style="@style/ed_teamName"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_nameOfTeam1"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/txt_nameOfTeam1" />
+        app:layout_constraintBottom_toBottomOf="@id/txt_nameOfTeam1"
+        app:layout_constraintEnd_toEndOf="@id/textView3"
+        app:layout_constraintStart_toEndOf="@id/txt_nameOfTeam1" />
 
     <TextView
         android:id="@+id/txt_nameOfTeam2"
         style="@style/txt_teamNames"
         android:text="Name of Team 2: "
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/txt_nameOfTeam1"
-        app:layout_constraintStart_toStartOf="@+id/txt_nameOfTeam1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nameOfTeam1" />
+        app:layout_constraintEnd_toEndOf="@id/txt_nameOfTeam1"
+        app:layout_constraintStart_toStartOf="@id/txt_nameOfTeam1"
+        app:layout_constraintTop_toBottomOf="@id/txt_nameOfTeam1" />
 
     <EditText
         android:id="@+id/ed_nameOfTeam2"
         style="@style/ed_teamName"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/ed_nameOfTeam1"
-        app:layout_constraintStart_toStartOf="@+id/ed_nameOfTeam1"
-        app:layout_constraintTop_toBottomOf="@+id/ed_nameOfTeam1" />
+        app:layout_constraintEnd_toEndOf="@id/ed_nameOfTeam1"
+        app:layout_constraintStart_toStartOf="@id/ed_nameOfTeam1"
+        app:layout_constraintTop_toBottomOf="@id/ed_nameOfTeam1" />
 
     <TextView
         android:id="@+id/txt_nameOfTeam3"
         style="@style/txt_teamNames"
         android:text="Name of Team 3: "
-        app:layout_constraintEnd_toEndOf="@+id/txt_nameOfTeam2"
+        app:layout_constraintEnd_toEndOf="@id/txt_nameOfTeam2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nameOfTeam2" />
+        app:layout_constraintTop_toBottomOf="@id/txt_nameOfTeam2" />
 
     <EditText
         android:id="@+id/ed_nameOfTeam3"
         style="@style/ed_teamName"
-        app:layout_constraintEnd_toEndOf="@+id/ed_nameOfTeam2"
-        app:layout_constraintStart_toStartOf="@+id/ed_nameOfTeam2"
-        app:layout_constraintTop_toBottomOf="@+id/ed_nameOfTeam2" />
+        app:layout_constraintEnd_toEndOf="@id/ed_nameOfTeam2"
+        app:layout_constraintStart_toStartOf="@id/ed_nameOfTeam2"
+        app:layout_constraintTop_toBottomOf="@id/ed_nameOfTeam2" />
 
     <TextView
         android:id="@+id/txt_nameOfTeam4"
         style="@style/txt_teamNames"
         android:text="Name of Team 4 "
-        app:layout_constraintEnd_toStartOf="@+id/ed_nameOfTeam3"
+        app:layout_constraintEnd_toStartOf="@id/ed_nameOfTeam3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nameOfTeam3" />
+        app:layout_constraintTop_toBottomOf="@id/txt_nameOfTeam3" />
 
     <EditText
         android:id="@+id/ed_nameOfTeam4"
         style="@style/ed_teamName"
-        app:layout_constraintEnd_toEndOf="@+id/ed_nameOfTeam3"
-        app:layout_constraintStart_toStartOf="@+id/ed_nameOfTeam3"
-        app:layout_constraintTop_toBottomOf="@+id/ed_nameOfTeam3" />
+        app:layout_constraintEnd_toEndOf="@id/ed_nameOfTeam3"
+        app:layout_constraintStart_toStartOf="@id/ed_nameOfTeam3"
+        app:layout_constraintTop_toBottomOf="@id/ed_nameOfTeam3" />
 
     <TextView
         android:id="@+id/txt_targetScore"
@@ -93,15 +93,15 @@
         android:text="Set theTarget Score?"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nameOfTeam4" />
+        app:layout_constraintTop_toBottomOf="@id/txt_nameOfTeam4" />
 
     <RadioGroup
         android:id="@+id/RadioGroup_Target"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_targetScore"
-        app:layout_constraintStart_toEndOf="@+id/txt_targetScore"
-        app:layout_constraintTop_toTopOf="@+id/txt_targetScore">
+        app:layout_constraintBottom_toBottomOf="@id/txt_targetScore"
+        app:layout_constraintStart_toEndOf="@id/txt_targetScore"
+        app:layout_constraintTop_toTopOf="@id/txt_targetScore">
 
         <RadioButton
             android:id="@+id/radio_targetYes"
@@ -109,10 +109,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:text="Yes"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_targetScore"
+            app:layout_constraintBottom_toBottomOf="@id/txt_targetScore"
             android:onClick="onRadioButtonClicked"
-            app:layout_constraintStart_toEndOf="@+id/txt_targetScore"
-            app:layout_constraintTop_toTopOf="@+id/txt_targetScore"
+            app:layout_constraintStart_toEndOf="@id/txt_targetScore"
+            app:layout_constraintTop_toTopOf="@id/txt_targetScore"
             />
 
         <RadioButton
@@ -123,8 +123,8 @@
             android:text="No"
             android:onClick="onRadioButtonClicked"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toStartOf="@+id/radio_targetYes"
-            app:layout_constraintTop_toBottomOf="@+id/radio_targetYes" />
+            app:layout_constraintStart_toStartOf="@id/radio_targetYes"
+            app:layout_constraintTop_toBottomOf="@id/radio_targetYes" />
     </RadioGroup>
 
     <Spinner
@@ -133,10 +133,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/RadioGroup_Target"
-        app:layout_constraintStart_toEndOf="@+id/RadioGroup_Target"
-        app:layout_constraintTop_toTopOf="@+id/RadioGroup_Target"
+        app:layout_constraintBottom_toBottomOf="@id/RadioGroup_Target"
+        app:layout_constraintStart_toEndOf="@id/RadioGroup_Target"
+        app:layout_constraintTop_toTopOf="@id/RadioGroup_Target"
         />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

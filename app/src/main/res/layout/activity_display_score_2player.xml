@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="49"
+            android:padding="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txt_nameTeam1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="label Team A"
+                android:gravity="center"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/txt_ScoreDisplay_Team1_2Player"
+                style="@style/txt_scoreDisplay_2Player"/>
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+1 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+2 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+5 point"
+                />
+
+            <View
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#efefef"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-1 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="-2 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="-5 point"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#efefef"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50"
+            android:padding="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txt_nameTeam2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="label Team B"
+                android:gravity="center"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/txt_ScoreDisplay_Team2_2Player"
+                style="@style/txt_scoreDisplay_2Player"/>
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+1 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+2 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="+5 point"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="10dp"
+                android:background="#efefef"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-1 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="-2 point"
+                />
+            <Button
+                style="@style/btn_changeScore_2Player"
+                android:text="-5 point"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:textSize="23sp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        />
+
+</RelativeLayout>
