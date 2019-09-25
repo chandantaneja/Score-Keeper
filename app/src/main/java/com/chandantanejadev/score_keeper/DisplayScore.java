@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 
 public class DisplayScore extends AppCompatActivity {
@@ -25,12 +25,14 @@ public class DisplayScore extends AppCompatActivity {
             setContentView(R.layout.activity_display_score_4player);
         }
         TextView txtNameTeam1_2Player = findViewById(R.id.txt_nameTeam1);
+        TextView txtNameTeam2_2Player = findViewById(R.id.txt_nameTeam2);
         Intent intent = getIntent();
         if (intent.hasExtra(TargetAndName.TARGET_SCORE)){
             SelectedTarget = intent.getStringExtra(TargetAndName.TARGET_SCORE);
         }
 
-        txtNameTeam1_2Player.setText(targetAndName.getmNameOfTeam2());
+        txtNameTeam1_2Player.setText(targetAndName.getmNameOfTeam1());
+        txtNameTeam2_2Player.setText(targetAndName.getmNameOfTeam2());
     }
 }
 
