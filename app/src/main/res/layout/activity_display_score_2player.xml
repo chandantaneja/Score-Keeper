@@ -30,14 +30,16 @@
                 android:id="@+id/txt_ScoreDisplay_Team1_2Player"
                 style="@style/txt_scoreDisplay_2Player"/>
             <Button
+                android:id="@+id/add1Score"
                 style="@style/btn_changeScore_2Player"
-                android:text="+1 point"
-                />
+                android:text="+1 point" />
             <Button
+                android:id="@+id/add2Score"
                 style="@style/btn_changeScore_2Player"
                 android:text="+2 point"
                 />
             <Button
+                android:id="@+id/add5Score"
                 style="@style/btn_changeScore_2Player"
                 android:text="+5 point"
                 />
@@ -48,15 +50,18 @@
                 android:layout_height="2dp"
                 android:background="#efefef"/>
             <Button
+                android:id="@+id/sub1Score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="-1 point"
                 />
             <Button
+                android:id="@+id/sub2Score"
                 style="@style/btn_changeScore_2Player"
                 android:text="-2 point"
                 />
             <Button
+                android:id="@+id/sub5Score"
                 style="@style/btn_changeScore_2Player"
                 android:text="-5 point"
                 />
@@ -90,14 +95,17 @@
                 android:id="@+id/txt_ScoreDisplay_Team2_2Player"
                 style="@style/txt_scoreDisplay_2Player"/>
             <Button
+                android:id="@+id/add1ScoreTeam2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+1 point"
                 />
             <Button
+                android:id="@+id/add2ScoreTeam2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+2 point"
                 />
             <Button
+                android:id="@+id/add5ScoreTeam2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+5 point"
                 />

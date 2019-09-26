@@ -89,9 +89,8 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
         TextView tvNameOfTeam3 = findViewById(R.id.txt_nameOfTeam3);
         TextView tvNameOfTeam4 = findViewById(R.id.txt_nameOfTeam4);
 
-        /**
-         * Check if the user wants to use the app for 2 player or 4
-         */
+//          Check if the user wants to use the app for 2 player or 4
+
         if (MainActivity.PLAYER_COUNT == 2){
             edNameOfTeam3.setVisibility(View.GONE);
             edNameOfTeam4.setVisibility(View.GONE);
@@ -99,9 +98,9 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
             tvNameOfTeam4.setVisibility(View.GONE);
         }
 
-        /**
-         * adapting the String Array to the Spinner to display the targets
-         */
+
+//         adapting the String Array to the Spinner to display the targets
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.target, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -120,19 +119,19 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
             //do nothing here
         }else{
             Toast.makeText(this, selectedTarget, Toast.LENGTH_SHORT).show();
-            /**
-             * As the user clicks on any target, the names of the teams are stored
-             * in the String vars
-             */
+
+//              As the user clicks on any target, the names of the teams are stored
+//              in the String vars
+
 
             mNameOfTeam1 = edNameOfTeam1.getText().toString();
             mNameOfTeam2 = edNameOfTeam2.getText().toString();
             mNameOfTeam3 = edNameOfTeam3.getText().toString();
             mNameOfTeam4 = edNameOfTeam4.getText().toString();
 
-            /**
-             * Intent to start DisplayScore and to send selectedTarget Score as an extra
-             */
+
+//              Intent to start DisplayScore and to send selectedTarget Score as an extra
+
             Intent intent = new Intent(TargetAndName.this, DisplayScore.class);
             intent.putExtra(TARGET_SCORE, selectedTarget);
             startActivity(intent);
@@ -164,18 +163,18 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
                 if (checked){
                     spinnerTarget.setVisibility(View.GONE);
 
-                    /**
-                     * as The user clicks NO
-                     * Setting string vars with the data of their respective texts from ET's
-                     */
+
+//                     as The user clicks NO
+//                     Setting string vars with the data of their respective texts from ET's
+
                 mNameOfTeam1 = edNameOfTeam1.getText().toString();
                 mNameOfTeam2 = edNameOfTeam2.getText().toString();
                 mNameOfTeam3 = edNameOfTeam3.getText().toString();
                 mNameOfTeam4 = edNameOfTeam4.getText().toString();
-                    /**
-                     * Intent to start DispplayScore activity
-                     * The user do not want to set the target score
-                      */
+
+//                      Intent to start DisplayScore activity
+//                      The user do not want to set the target score
+
                 Intent intent = new Intent(TargetAndName.this, DisplayScore.class);
                 startActivity(intent);
                 }
