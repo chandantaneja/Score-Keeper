@@ -84,16 +84,28 @@
         app:layout_constraintStart_toStartOf="@id/ed_nameOfTeam3"
         app:layout_constraintTop_toBottomOf="@id/ed_nameOfTeam3" />
 
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#efefef"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nameOfTeam4"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"/>
+
     <TextView
         android:id="@+id/txt_targetScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
         android:text="Set theTarget Score?"
         android:textSize="20sp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_nameOfTeam4" />
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <RadioGroup
         android:id="@+id/RadioGroup_Target"
@@ -119,7 +131,7 @@
             android:id="@+id/radio_targetNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:text="No"
             android:onClick="onRadioButtonClicked"
             android:layout_marginStart="3dp"

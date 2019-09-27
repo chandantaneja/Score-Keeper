@@ -15,6 +15,13 @@ import android.widget.Toast;
 
 public class TargetAndName extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
+    private static boolean isTargetSetted = false;
+
+    public boolean isIsTargetSetted() {
+        return isTargetSetted;
+    }
+
     /**
      * Tag for intent extra to send TargetScore to DisplayScore
      */
@@ -66,9 +73,6 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
     private static String mNameOfTeam2;
     private static String mNameOfTeam3;
     private static String mNameOfTeam4;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +133,8 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
             mNameOfTeam3 = edNameOfTeam3.getText().toString();
             mNameOfTeam4 = edNameOfTeam4.getText().toString();
 
+            isTargetSetted = true;
+
 
 //              Intent to start DisplayScore and to send selectedTarget Score as an extra
 
@@ -172,11 +178,13 @@ public class TargetAndName extends AppCompatActivity implements AdapterView.OnIt
                 mNameOfTeam3 = edNameOfTeam3.getText().toString();
                 mNameOfTeam4 = edNameOfTeam4.getText().toString();
 
+                isTargetSetted = false;
 //                      Intent to start DisplayScore activity
 //                      The user do not want to set the target score
 
                 Intent intent = new Intent(TargetAndName.this, DisplayScore.class);
                 startActivity(intent);
+
                 }
                     break;
         }

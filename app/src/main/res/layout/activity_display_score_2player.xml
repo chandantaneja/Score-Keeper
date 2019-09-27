@@ -27,20 +27,24 @@
                 />
 
             <TextView
-                android:id="@+id/txt_ScoreDisplay_Team1_2Player"
+                android:id="@+id/txt_DisplayScore_Team1_2Player"
                 style="@style/txt_scoreDisplay_2Player"/>
             <Button
-                android:id="@+id/add1Score"
+                android:id="@+id/btn_add1Score_Team1"
                 style="@style/btn_changeScore_2Player"
-                android:text="+1 point" />
+                android:onClick="add1ToTheScoreTeam1"
+            android:text="+1 point" />
+
             <Button
-                android:id="@+id/add2Score"
+                android:id="@+id/btn_add2Score_Team1"
                 style="@style/btn_changeScore_2Player"
+                android:onClick="add2ToTheScoreTeam1"
                 android:text="+2 point"
                 />
             <Button
-                android:id="@+id/add5Score"
+                android:id="@+id/btn_add5Score_Team1"
                 style="@style/btn_changeScore_2Player"
+                android:onClick="add5ToTheScoreTeam1"
                 android:text="+5 point"
                 />
 
@@ -50,20 +54,25 @@
                 android:layout_height="2dp"
                 android:background="#efefef"/>
             <Button
-                android:id="@+id/sub1Score"
+                android:id="@+id/btn_sub1Score_Team1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="-1 point"
+                android:onClick="sub1ToTheScoreTeam1"
                 />
             <Button
-                android:id="@+id/sub2Score"
+                android:id="@+id/btn_sub2Score_Team1"
                 style="@style/btn_changeScore_2Player"
                 android:text="-2 point"
+                android:onClick="sub2ToTheScoreTeam1"
+
                 />
             <Button
-                android:id="@+id/sub5Score"
+                android:id="@+id/btn_sub5Score_Team1"
                 style="@style/btn_changeScore_2Player"
                 android:text="-5 point"
+                android:onClick="sub5ToTheScoreTeam1"
+
                 />
 
         </LinearLayout>
@@ -95,19 +104,24 @@
                 android:id="@+id/txt_ScoreDisplay_Team2_2Player"
                 style="@style/txt_scoreDisplay_2Player"/>
             <Button
-                android:id="@+id/add1ScoreTeam2"
+                android:id="@+id/btn_add1Score_Team2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+1 point"
+                android:onClick="add1ToTheScoreTeam2"
+
                 />
             <Button
-                android:id="@+id/add2ScoreTeam2"
+                android:id="@+id/btn_add2Score_Team2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+2 point"
+                android:onClick="add2ToTheScoreTeam2"
+
                 />
             <Button
-                android:id="@+id/add5ScoreTeam2"
+                android:id="@+id/btn_add5Score_Team2"
                 style="@style/btn_changeScore_2Player"
                 android:text="+5 point"
+                android:onClick="add5ToTheScoreTeam2"
                 />
             <View
                 android:layout_width="match_parent"
@@ -115,17 +129,23 @@
                 android:layout_margin="10dp"
                 android:background="#efefef"/>
             <Button
+                android:id="@+id/btn_sub1Score_Team2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="-1 point"
+                android:onClick="sub1ToTheScoreTeam2"
                 />
             <Button
+                android:id="@+id/btn_sub2Score_Team2"
                 style="@style/btn_changeScore_2Player"
                 android:text="-2 point"
+                android:onClick="sub2ToTheScoreTeam2"
                 />
             <Button
+                android:id="@+id/btn_sub5Score_Team2"
                 style="@style/btn_changeScore_2Player"
                 android:text="-5 point"
+                android:onClick="sub5ToTheScoreTeam2"
                 />
 
         </LinearLayout>
@@ -139,6 +159,7 @@
         android:padding="10dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
+        android:onClick="resetScore"
         />
 
 </RelativeLayout>

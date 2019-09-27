@@ -5,20 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-
-public class DisplayScore extends AppCompatActivity implements AlterScore2Player {
+public class DisplayScore extends AppCompatActivity implements AlterScore2Player, AlterScore4Player {
 
     TargetAndName targetAndName = new TargetAndName();
-    private static int scoreTeam1 = 0;
-    private static int scoreTeam2 = 0;
-    private Button scoreAdd1Team1, scoreAdd2Team1, scoreAdd5Team1, scoreAdd1Team2, scoreAdd2Team2, scoreAdd5Team2;
-    private TextView txtNameTeam1_2Player, txtNameTeam2_2Player, displayScoreTeam1, displayScoreTeam2;
+    private static int currentScoreTeam1 = 0;
+    private static int currentScoreTeam2 = 0;
+
+    private TextView displayScoreTeam1;
+    private TextView displayScoreTeam2;
     private String selectedTarget;
-//    private static final String TAG = "com.chandantanejadev";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +25,10 @@ public class DisplayScore extends AppCompatActivity implements AlterScore2Player
 
         if (MainActivity.PLAYER_COUNT == 2) {
             setContentView(R.layout.activity_display_score_2player);
-            txtNameTeam1_2Player = findViewById(R.id.txt_nameTeam1);
-            txtNameTeam2_2Player = findViewById(R.id.txt_nameTeam2);
-            scoreAdd1Team1 = findViewById(R.id.add1Score);
-            scoreAdd2Team1 = findViewById(R.id.add2Score);
-            scoreAdd5Team1 = findViewById(R.id.add5Score);
-            scoreAdd1Team2 = findViewById(R.id.add1ScoreTeam2);
-            scoreAdd2Team2 = findViewById(R.id.add2ScoreTeam2);
-            scoreAdd5Team2 = findViewById(R.id.add5ScoreTeam2);
-            displayScoreTeam1 = findViewById(R.id.txt_ScoreDisplay_Team1_2Player);
+            TextView txtNameTeam1_2Player = findViewById(R.id.txt_nameTeam1);
+            TextView txtNameTeam2_2Player = findViewById(R.id.txt_nameTeam2);
+
+            displayScoreTeam1 = findViewById(R.id.txt_DisplayScore_Team1_2Player);
             displayScoreTeam2 = findViewById(R.id.txt_ScoreDisplay_Team2_2Player);
             txtNameTeam1_2Player.setText(targetAndName.getmNameOfTeam1());
             txtNameTeam2_2Player.setText(targetAndName.getmNameOfTeam2());
@@ -43,126 +37,146 @@ public class DisplayScore extends AppCompatActivity implements AlterScore2Player
             setContentView(R.layout.activity_display_score_4player);
         }
 
+
+
         Intent intent = getIntent();
         if (intent.hasExtra(TargetAndName.TARGET_SCORE)){
             selectedTarget = intent.getStringExtra(TargetAndName.TARGET_SCORE);
         }
 
-        scoreAdd1Team1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add1ToTheScoreTeam1();
-            }
-        });
-
-        scoreAdd2Team1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add2ToTheScoreTeam1();
-            }
-        });
-
-        scoreAdd5Team1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add5ToTheScoreTeam1();
-            }
-        });
-
-        scoreAdd1Team2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add1ToTheScoreTeam2();
-            }
-        });
-
-        scoreAdd2Team2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add2ToTheScoreTeam2();
-            }
-        });
-        scoreAdd5Team2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                add5ToTheScoreTeam2();
-            }
-        });
     }
 
     @Override
-    public void add1ToTheScoreTeam1() {
-        scoreTeam1 ++;
+    public void add1ToTheScoreTeam1(View v) {
+        currentScoreTeam1 ++;
         displayCurrentScoreTeam1();
     }
 
     @Override
-    public void add2ToTheScoreTeam1() {
-        scoreTeam1 += 2;
+    public void add2ToTheScoreTeam1(View v) {
+        currentScoreTeam1 += 2;
         displayCurrentScoreTeam1();
     }
 
     @Override
-    public void add5ToTheScoreTeam1() {
-        scoreTeam1 += 5;
+    public void add5ToTheScoreTeam1(View v) {
+        currentScoreTeam1 += 5;
         displayCurrentScoreTeam1();
     }
 
     @Override
-    public void sub1ToTheScoreTeam1() {
-        scoreTeam1 --;
+    public void sub1ToTheScoreTeam1(View v) {
+        currentScoreTeam1 --;
         displayCurrentScoreTeam1();
     }
 
     @Override
-    public void sub2ToTheScoreTeam1() {
-        scoreTeam1 -= 2;
+    public void sub2ToTheScoreTeam1(View v) {
+        currentScoreTeam1 -= 2;
         displayCurrentScoreTeam1();
     }
 
     @Override
-    public void sub5ToTheScoreTeam1() {
-        scoreTeam1 -= 5;
+    public void sub5ToTheScoreTeam1(View v) {
+        currentScoreTeam1 -= 5;
         displayCurrentScoreTeam1();
     }
 
     @Override
     public void displayCurrentScoreTeam1() {
-        displayScoreTeam1.setText(scoreTeam1);
+        displayScoreTeam1.setText(String.valueOf(currentScoreTeam1));
+        if (targetAndName.isIsTargetSetted()){
+            if (currentScoreTeam1 >= Integer.valueOf(selectedTarget)) {
+                winnerIsTeamA();
+            }
+        }
+
+    }
+
+
+    @Override
+    public void add1ToTheScoreTeam2(View v) {
+        currentScoreTeam2 ++;
+        displayCurrentScoreTeam2();
     }
 
     @Override
-    public void add1ToTheScoreTeam2() {
-        scoreTeam2 ++;
+    public void add2ToTheScoreTeam2(View v) {
+        currentScoreTeam2 += 2;
+        displayCurrentScoreTeam2();
     }
 
     @Override
-    public void add2ToTheScoreTeam2() {
-        scoreTeam2 += 2;
+    public void add5ToTheScoreTeam2(View v) {
+        currentScoreTeam2 += 5;
+        displayCurrentScoreTeam2();
     }
 
     @Override
-    public void add5ToTheScoreTeam2() {
-        scoreTeam2 += 5;
+    public void sub1ToTheScoreTeam2(View v) {
+        currentScoreTeam2--;
+        displayCurrentScoreTeam2();
     }
 
     @Override
-    public void sub1ToTheScoreTeam2() {
-        scoreTeam2--;
+    public void sub2ToTheScoreTeam2(View v) {
+        currentScoreTeam2 -= 2;
+        displayCurrentScoreTeam2();
     }
 
     @Override
-    public void sub2ToTheScoreTeam2() {
-        scoreTeam2 -= 2;
-    }
-
-    @Override
-    public void sub5ToTheScoreTeam2() {
-        scoreTeam2 -= 5;
+    public void sub5ToTheScoreTeam2(View v) {
+        currentScoreTeam2 -= 5;
+        displayCurrentScoreTeam2();
     }
 
     @Override
     public void displayCurrentScoreTeam2() {
-        displayScoreTeam2.setText(scoreTeam2);
+        displayScoreTeam2.setText(String.valueOf(currentScoreTeam2));
+        if (targetAndName.isIsTargetSetted()) {
+            if (currentScoreTeam2 >= Integer.valueOf(selectedTarget)) {
+                winnerIsTeamB();
+            }
+        }
     }
+
+    @Override
+    public void resetScore(View v){
+        currentScoreTeam1 = 0;
+        currentScoreTeam2 = 0;
+        displayCurrentScoreTeam1();
+        displayCurrentScoreTeam2();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+    }
+
+    private void winnerIsTeamA(){
+        currentScoreTeam1 = 0;
+        currentScoreTeam2 = 0;
+        Toast.makeText(this, "Winner is " + targetAndName.getmNameOfTeam1(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "New Game Started", Toast.LENGTH_SHORT).show();
+        displayCurrentScoreTeam1();
+        displayCurrentScoreTeam2();
+    }
+
+    private void winnerIsTeamB(){
+        currentScoreTeam1 = 0;
+        currentScoreTeam2 = 0;
+        Toast.makeText(this, "Winner is " + targetAndName.getmNameOfTeam2(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "New Game Started", Toast.LENGTH_SHORT).show();
+        displayCurrentScoreTeam1();
+        displayCurrentScoreTeam2();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        currentScoreTeam1 = 0;
+        currentScoreTeam2 = 0;
+    }
+
 }
